@@ -150,7 +150,7 @@ class EncoderBlock(nn.Module):
         super().__init__()
         self.self_attention_block = self_attention_block
         self.feed_forward_block = feed_forward_block
-        self.residual_connection = nn.ModuleDict(
+        self.residual_connection = nn.ModuleList(
             [ResidualConnection(features=features, dropout=dropout) for _ in range(2)]
         )
 
